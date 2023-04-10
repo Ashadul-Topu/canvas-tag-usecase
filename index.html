@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D design using canvas tag and JS</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="300"> </canvas>
+    
+
+    <script>
+        let canvas = document.getElementById('myCanvas');
+
+        let canvasContext = canvas.getContext('2d'); // define canvas context for drawing 2D or 3D elements
+
+        canvasContext.lineWidth = 2;
+        canvasContext.strokeStyle = "black";
+        canvasContext.strokeRect(8, 8, 384, 284)
+
+        canvasContext.fillStyle = 'green';
+        canvasContext.fillRect(12, 12, 376, 276)// canvas start position and end position
+
+        // circle
+        let centerX = canvas.width/2 // center width position
+        let centerY = canvas.height/2 // center height position
+
+        canvasContext.beginPath();
+        canvasContext.arc(centerX, centerY,80,0,2*Math.PI, false);
+        canvasContext.fillStyle = "red";
+        canvasContext.fill();
+        canvasContext.stroke();
+    </script>
+</body>
+</html>
